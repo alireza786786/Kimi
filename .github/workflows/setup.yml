@@ -15,17 +15,12 @@ jobs:
 
       - name: Generate 8 Guard Files
         run: |
-          python3 -c '
+          cat << 'EOF' > make_guards.py
           import os
 
           os.makedirs(".github/workflows", exist_ok=True)
 
-          expr_bot = "${" + "{" + " secrets.BOT_TOKEN " + "}" + "}"
-          expr_chat = "${" + "{" + " secrets.CHAT_ID " + "}" + "}"
-          expr_src = "${" + "{" + " secrets.SOURCES_JSON " + "}" + "}"
-
-          for i in range(1, 9):
-              content = f"""name: GUARD {i} Engine
+          template = """name: GUARD {i} Engine
 
           on:
             schedule:
@@ -57,9 +52,9 @@ jobs:
 
                 - name: Execute guard{i} Engine
                   env:
-                    BOT_TOKEN: {expr_bot}
-                    CHAT_ID: {expr_chat}
-                    SOURCES_JSON: {expr_src}
+                    BOT_TOKEN: ${{{{ secrets.BOT_TOKEN }}}}
+                    CHAT_ID: ${{{{ secrets.CHAT_ID }}}}
+                    SOURCES_JSON: ${{{{ secrets.SOURCES_JSON }}}}
                   run: python guard{i}.py
 
                 - name: Commit Updated Subscription
@@ -68,13 +63,17 @@ jobs:
                     git config user.email "guard@github.com"
                     git add subscription_guard{i}*.txt || true
                     if ! git diff --cached --quiet; then
-                      git commit -m "Auto Update guard{i}: $(date -u +\'%Y-%m-%d %H:%M\')"
+                      git commit -m "Auto Update guard{i}: $(date -u +'%Y-%m-%d %H:%M')"
                       git push
                     fi
           """
+
+          for i in range(1, 9):
               with open(f".github/workflows/guard{i}.yml", "w", encoding="utf-8") as f:
-                  f.write(content)
-          '
+                  f.write(template.format(i=i))
+          print("Done!")
+          EOF
+          python3 make_guards.py
 
       - name: Commit and Push
         run: |
