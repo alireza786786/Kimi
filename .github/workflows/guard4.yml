@@ -1,0 +1,46 @@
+name: GUARD 4 Engine
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guard4_job
+  cancel-in-progress: false
+
+jobs:
+  run-guard4:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Dependencies
+        run: pip install -q -r requirements.txt
+
+      - name: Execute guard4 Engine
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+          SOURCES_JSON: ${{ secrets.SOURCES_JSON }}
+        run: python guard4.py
+
+      - name: Commit Updated Subscription
+        run: |
+          git config user.name "Guard-Bot"
+          git config user.email "guard@github.com"
+          git add subscription_guard4*.txt || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto Update guard4: $(date -u +'%Y-%m-%d %H:%M')"
+            git push
+          fi
