@@ -29,13 +29,13 @@ jobs:
           git push || echo "Nothing to push"
 
       - name: Create release
-        if: ${{ hashFiles('output/country/*') != '' }}
+        if: ${{ hashFiles('output/*') != '' }}
         uses: softprops/action-gh-release@v1
         with:
           tag_name: "finalizer-$(date +'%Y%m%d-%H%M%S')"
           name: "Finalizer Run $(date)"
           body: "Automated release containing only output files."
           files: |
-            output/country/*
+            output/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
