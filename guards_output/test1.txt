@@ -1,0 +1,3 @@
+vmess://example-link-1
+vless://example-link-2
+trojan://example-link-3
