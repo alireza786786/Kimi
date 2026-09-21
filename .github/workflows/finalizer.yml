@@ -1,9 +1,7 @@
 name: Run Finalizer
 
 on:
-  push:
-    paths:
-      - "guards_output/**"
+  workflow_dispatch:
 
 jobs:
   build:
@@ -19,12 +17,12 @@ jobs:
 
       - name: Run finalizer
         run: |
-          python finalizer.py
+          python Kimi/finalizer.py
 
       - name: Commit and push results
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add output/*
+          git add Kimi/output/*
           git commit -m "Update output files"
           git push
