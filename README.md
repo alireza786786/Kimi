@@ -1,14 +1,12 @@
 # 🌍 By Country
 
-<div style="display: flex; gap: 20px;">
+<div style="display: flex; justify-content: space-between; gap: 30px;">
 
-<!-- جدول اول -->
+<!-- جدول سمت چپ -->
 <div style="flex: 1;">
 
-### جدول ۱
-
 | Country | Nodes | V2Ray |
-|--------|--------|--------|
+|----------|--------|--------|
 | 🇮🇷 Iran (IR) | {{IR_COUNT}} | [v2ray-IR.txt](output/v2ray-IR.txt) |
 | 🇯🇵 Japan (JP) | {{JP_COUNT}} | [v2ray-JP.txt](output/v2ray-JP.txt) |
 | 🇺🇸 United States (US) | {{US_COUNT}} | [v2ray-US.txt](output/v2ray-US.txt) |
@@ -22,13 +20,11 @@
 
 </div>
 
-<!-- جدول دوم -->
+<!-- جدول سمت راست -->
 <div style="flex: 1;">
 
-### جدول ۲
-
 | Country | Nodes | V2Ray |
-|--------|--------|--------|
+|----------|--------|--------|
 | 🇵🇱 Poland (PL) | {{PL_COUNT}} | [v2ray-PL.txt](output/v2ray-PL.txt) |
 | 🇬🇧 United Kingdom (GB) | {{GB_COUNT}} | [v2ray-GB.txt](output/v2ray-GB.txt) |
 | 🇦🇺 Australia (AU) | {{AU_COUNT}} | [v2ray-AU.txt](output/v2ray-AU.txt) |
