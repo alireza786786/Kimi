@@ -18,7 +18,7 @@ jobs:
 
       - name: Run finalizer
         run: |
-          python Kimi/finalizer.py
+          python finalizer.py
 
       - name: Commit and push results
         run: |
