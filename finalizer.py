@@ -1,16 +1,17 @@
 import os
 
-# مسیر پوشه خروجی
-OUTPUT_DIR = "output"
+# مسیرهای خروجی
+BASE_DIR = os.path.join(os.path.dirname(__file__))  # مسیر پوشه‌ی Kimi
+OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 PROTOCOL_DIR = os.path.join(OUTPUT_DIR, "protocol")
 COUNTRY_DIR = os.path.join(OUTPUT_DIR, "country")
-GUARD_OUTPUT_DIR = "guards_output"  # پوشه‌ای که خروجی guardها در آن ذخیره شده
+GUARD_OUTPUT_DIR = os.path.join(BASE_DIR, "guards_output")  # مسیر درست پوشه‌ی ورودی
 
-# ایجاد پوشه‌ها اگر وجود ندارند
+# ایجاد پوشه‌ها در صورت نداشتن
 os.makedirs(PROTOCOL_DIR, exist_ok=True)
 os.makedirs(COUNTRY_DIR, exist_ok=True)
 
-# گام 3: خواندن همه فایل‌های خروجی guardها
+# گام 3: خواندن همه فایل‌های guards
 def read_all_configs():
     configs = []
     for file in os.listdir(GUARD_OUTPUT_DIR):
@@ -37,7 +38,7 @@ def categorize_by_protocol(configs):
         with open(filename, "w", encoding="utf-8") as f:
             f.write("\n".join(items))
 
-# گام 5: دسته‌بندی بر اساس کشور (نسخه ساده)
+# گام 5: دسته‌بندی بر اساس کشور (کد سه‌حرفی)
 def categorize_by_country(configs):
     country_map = {}
     for cfg in configs:
@@ -47,9 +48,19 @@ def categorize_by_country(configs):
             country = "DE"
         elif "IR" in cfg:
             country = "IR"
+        elif "NL" in cfg:
+            country = "NL"
         else:
             country = "OTHER"
         country_map.setdefault(country, []).append(cfg)
     # ذخیره در فایل‌ها
     for country, items in country_map.items():
         filename = os.path.join(COUNTRY_DIR, country + ".txt")
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("\n".join(items))
+
+# اجرای مراحل
+if __name__ == "__main__":
+    configs = read_all_configs()
+    categorize_by_protocol(configs)
+    categorize_by_country(configs)
