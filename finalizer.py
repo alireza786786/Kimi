@@ -21,9 +21,9 @@ for filename in os.listdir(input_folder):
 
     if country not in countries:
         countries[country] = {
+            "v2ray": [],
             "clash": [],
-            "singbox": [],
-            "v2ray": []
+            "singbox": []
         }
 
     with open(path, "r", encoding="utf-8") as f:
@@ -32,13 +32,15 @@ for filename in os.listdir(input_folder):
             if not line:
                 continue
 
-            # دسته‌بندی لینک‌ها
+            # لینک‌های V2Ray نرمال
             if line.startswith(("vmess://", "vless://", "trojan://")):
                 countries[country]["v2ray"].append(line)
 
+            # فایل‌های Clash
             elif line.endswith(".yaml"):
                 countries[country]["clash"].append(line)
 
+            # فایل‌های sing-box
             elif line.endswith(".json"):
                 countries[country]["singbox"].append(line)
 
