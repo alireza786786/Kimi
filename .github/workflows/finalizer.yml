@@ -17,20 +17,19 @@ jobs:
           python-version: "3.x"
 
       - name: Run finalizer
-        working-directory: Kimi
         run: |
-          python finalizer.py
+          python Kimi/finalizer.py
 
       - name: Commit and push results
-        working-directory: Kimi
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add output/*
+          git add Kimi/output/*
           git commit -m "Update output files" || echo "No changes"
           git push || echo "Nothing to push"
 
-      - name: Create release with output files only
+      - name: Create release
+        if: ${{ hashFiles('Kimi/output/*') != '' }}
         uses: softprops/action-gh-release@v1
         with:
           tag_name: "finalizer-$(date +'%Y%m%d-%H%M%S')"
