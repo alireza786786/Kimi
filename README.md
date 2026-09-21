@@ -2,28 +2,4 @@
 
 | جدول ۱ | جدول ۲ |
 |--------|--------|
-| 
-**Country | Nodes | V2Ray**  
-🇮🇷 IR | {{IR_COUNT}} | [v2ray-IR.txt](output/v2ray-IR.txt)  
-🇯🇵 JP | {{JP_COUNT}} | [v2ray-JP.txt](output/v2ray-JP.txt)  
-🇺🇸 US | {{US_COUNT}} | [v2ray-US.txt](output/v2ray-US.txt)  
-🇳🇱 NL | {{NL_COUNT}} | [v2ray-NL.txt](output/v2ray-NL.txt)  
-🇹🇼 TW | {{TW_COUNT}} | [v2ray-TW.txt](output/v2ray-TW.txt)  
-🇸🇬 SG | {{SG_COUNT}} | [v2ray-SG.txt](output/v2ray-SG.txt)  
-🇨🇦 CA | {{CA_COUNT}} | [v2ray-CA.txt](output/v2ray-CA.txt)  
-🇭🇰 HK | {{HK_COUNT}} | [v2ray-HK.txt](output/v2ray-HK.txt)  
-🇩🇪 DE | {{DE_COUNT}} | [v2ray-DE.txt](output/v2ray-DE.txt)  
-🇰🇷 KR | {{KR_COUNT}} | [v2ray-KR.txt](output/v2ray-KR.txt)  
-| 
-**Country | Nodes | V2Ray**  
-🇵🇱 PL | {{PL_COUNT}} | [v2ray-PL.txt](output/v2ray-PL.txt)  
-🇬🇧 GB | {{GB_COUNT}} | [v2ray-GB.txt](output/v2ray-GB.txt)  
-🇦🇺 AU | {{AU_COUNT}} | [v2ray-AU.txt](output/v2ray-AU.txt)  
-🇫🇷 FR | {{FR_COUNT}} | [v2ray-FR.txt](output/v2ray-FR.txt)  
-🇷🇴 RO | {{RO_COUNT}} | [v2ray-RO.txt](output/v2ray-RO.txt)  
-🇮🇳 IN | {{IN_COUNT}} | [v2ray-IN.txt](output/v2ray-IN.txt)  
-🇫🇮 FI | {{FI_COUNT}} | [v2ray-FI.txt](output/v2ray-FI.txt)  
-🇹🇭 TH | {{TH_COUNT}} | [v2ray-TH.txt](output/v2ray-TH.txt)  
-🇦🇪 AE | {{AE_COUNT}} | [v2ray-AE.txt](output/v2ray-AE.txt)  
-🇹🇷 TR | {{TR_COUNT}} | [v2ray-TR.txt](output/v2ray-TR.txt)  
-|
+| **Country | Nodes | V2Ray**<br>🇮🇷 Iran (IR) | {{IR_COUNT}} | [v2ray-IR.txt](output/v2ray-IR.txt)<br>🇯🇵 Japan (JP) | {{JP_COUNT}} | [v2ray-JP.txt](output/v2ray-JP.txt)<br>🇺🇸 United States (US) | {{US_COUNT}} | [v2ray-US.txt](output/v2ray-US.txt)<br>🇳🇱 Netherlands (NL) | {{NL_COUNT}} | [v2ray-NL.txt](output/v2ray-NL.txt)<br>🇹🇼 Taiwan (TW) | {{TW_COUNT}} | [v2ray-TW.txt](output/v2ray-TW.txt)<br>🇸🇬 Singapore (SG) | {{SG_COUNT}} | [v2ray-SG.txt](output/v2ray-SG.txt)<br>🇨🇦 Canada (CA) | {{CA_COUNT}} | [v2ray-CA.txt](output/v2ray-CA.txt)<br>🇭🇰 Hong Kong (HK) | {{HK_COUNT}} | [v2ray-HK.txt](output/v2ray-HK.txt)<br>🇩🇪 Germany (DE) | {{DE_COUNT}} | [v2ray-DE.txt](output/v2ray-DE.txt)<br>🇰🇷 Korea (KR) | {{KR_COUNT}} | [v2ray-KR.txt](output/v2ray-KR.txt)<br>🇵🇱 Poland (PL) | {{PL_COUNT}} | [v2ray-PL.txt](output/v2ray-PL.txt)<br>🇬🇧 United Kingdom (GB) | {{GB_COUNT}} | [v2ray-GB.txt](output/v2ray-GB.txt)<br>🇦🇺 Australia (AU) | {{AU_COUNT}} | [v2ray-AU.txt](output/v2ray-AU.txt)<br>🇫🇷 France (FR) | {{FR_COUNT}} | [v2ray-FR.txt](output/v2ray-FR.txt)<br>🇷🇴 Romania (RO) | {{RO_COUNT}} | [v2ray-RO.txt](output/v2ray-RO.txt)<br>🇮🇳 India (IN) | {{IN_COUNT}} | [v2ray-IN.txt](output/v2ray-IN.txt)<br>🇫🇮 Finland (FI) | {{FI_COUNT}} | [v2ray-FI.txt](output/v2ray-FI.txt)<br>🇹🇭 Thailand (TH) | {{TH_COUNT}} | [v2ray-TH.txt](output/v2ray-TH.txt)<br>🇦🇪 UAE (AE) | {{AE_COUNT}} | [v2ray-AE.txt](output/v2ray-AE.txt)<br>🇪🇪 Estonia (EE) | {{EE_COUNT}} | [v2ray-EE.txt](output/v2ray-EE.txt)<br>🇮🇹 Italy (IT) | {{IT_COUNT}} | [v2ray-IT.txt](output/v2ray-IT.txt)<br>🇷🇺 Russia (RU) | {{RU_COUNT}} | [v2ray-RU.txt](output/v2ray-RU.txt)<br>🇹🇷 Turkey (TR) | {{TR_COUNT}} | [v2ray-TR.txt](output/v2ray-TR.txt) |
