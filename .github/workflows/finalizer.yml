@@ -1,4 +1,4 @@
-name: Run Finalizer
+name: Build Country V2Ray List
 
 on:
   workflow_dispatch:
@@ -9,33 +9,21 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+      uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.x"
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.x"
 
       - name: Run finalizer
-        run: |
-          python finalizer.py
+      run: |
+        python finalizer.py
 
       - name: Commit and push results
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add -A
-          git commit -m "Update output files" || echo "No changes"
-          git push || echo "Nothing to push"
-
-      - name: Create release
-        if: ${{ hashFiles('output/*') != '' }}
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: "finalizer-$(date +'%Y%m%d-%H%M%S')"
-          name: "Finalizer Run $(date)"
-          body: "Automated release containing only output files."
-          files: |
-            output/*
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "actions@github.com"
+        git add -A
+        git commit -m "Auto update output and README" || echo "No changes"
+        git push || echo "Nothing to push"
