@@ -6,7 +6,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write        # ✅ لازم برای commit/push خودکار
+  contents: write
+
+concurrency:
+  group: multi-runner
+  cancel-in-progress: false
 
 jobs:
   update-all:
@@ -26,10 +30,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests aiohttp
 
+    - name: Cache Xray binary
+      uses: actions/cache@v4
+      with:
+        path: .xray_bin
+        key: xray-bin-v1
+
     - name: Run V2Ray Subscriptions Runner
       env:
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-        CHAT_ID: ${{ secrets.CHAT_ID }}
+        CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
         SOURCES_JSON: ${{ secrets.SOURCES_JSON }}
       run: |
         python multi_runner.py
@@ -37,7 +47,7 @@ jobs:
     - name: Run Telegram Proxy Collector
       env:
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-        CHAT_ID: ${{ secrets.CHAT_ID }}
+        CHAT_ID: ${{ secrets.CHANNEL_ID }}
       run: |
         python proxy_collector.py
 
