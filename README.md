@@ -1,9 +1,9 @@
 # 🌍 By Country
 
-<div style="display: flex; justify-content: space-between; gap: 30px;">
+<div style="display: flex; justify-content: center; gap: 40px;">
 
 <!-- جدول سمت چپ -->
-<div style="flex: 1;">
+<div style="flex: 1; border-right: 2px solid #ccc; padding-right: 20px;">
 
 | Country | Nodes | V2Ray |
 |----------|--------|--------|
@@ -21,7 +21,7 @@
 </div>
 
 <!-- جدول سمت راست -->
-<div style="flex: 1;">
+<div style="flex: 1; padding-left: 20px;">
 
 | Country | Nodes | V2Ray |
 |----------|--------|--------|
