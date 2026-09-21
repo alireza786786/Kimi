@@ -28,13 +28,27 @@ jobs:
           git commit -m "Update output files" || echo "No changes to commit"
           git push || echo "Nothing to push"
 
-      - name: Create release
+      - name: Update README summary
+        run: |
+          echo "## 🧩 Latest Finalizer Run" > summary.md
+          echo "✅ Workflow executed successfully on $(date)" >> summary.md
+          echo "" >> summary.md
+          echo "### Generated files:" >> summary.md
+          ls Kimi/output >> summary.md || echo "No output files found"
+          echo "" >> summary.md
+          echo "### Release tag:" >> summary.md
+          echo "finalizer-$(date +'%Y%m%d-%H%M%S')" >> summary.md
+          cat summary.md >> README.md
+
+      - name: Create release with output files only
         if: ${{ hashFiles('Kimi/output/*') != '' }}
         uses: softprops/action-gh-release@v1
         with:
           tag_name: "finalizer-$(date +'%Y%m%d-%H%M%S')"
           name: "Finalizer Run $(date)"
-          body: "Automated release containing only output files."
+          body: |
+            Automated release containing only output files.
+            See README for summary.
           files: |
             Kimi/output/*
         env:
