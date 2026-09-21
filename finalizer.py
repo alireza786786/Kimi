@@ -2,7 +2,7 @@ import os
 import json
 
 input_folder = "guards_output"
-output_folder = "output/country"
+output_folder = "output"
 
 os.makedirs(output_folder, exist_ok=True)
 
@@ -16,7 +16,6 @@ for filename in os.listdir(input_folder):
             if not line:
                 continue
 
-            # تشخیص کشور از نام فایل
             country = filename.split("-")[0].upper()
 
             if country not in countries:
@@ -28,14 +27,11 @@ for filename in os.listdir(input_folder):
 
             if line.startswith("vmess://") or line.startswith("vless://") or line.startswith("trojan://"):
                 countries[country]["v2ray"].append(line)
-
             elif line.endswith(".yaml"):
                 countries[country]["clash"].append(line)
-
             elif line.endswith(".json"):
                 countries[country]["singbox"].append(line)
 
-# ذخیره خروجی‌ها
 for country, data in countries.items():
     with open(f"{output_folder}/v2ray-{country}.txt", "w") as f:
         for link in data["v2ray"]:
