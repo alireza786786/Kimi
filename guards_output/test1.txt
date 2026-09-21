@@ -1,3 +1,11 @@
-vmess://eyJhZGQiOiIxLjEuMS4xIiwiYWlkIjoiMCIsInBvcnQiOiI0NDMiLCJpZCI6IjEyMzQ1Ni1hYmNkLWVmZ2gtMTIzNC01Njc4OTBhYmNkZWYiLCJzY3kiOiJhdXRvIiwibmV0IjoidGNwIiwidHlwZSI6IiIsInRscyI6IiJ9
-vless://12345678-abcd-efgh-1234-567890abcdef@1.1.1.1:443?encryption=none&security=none&type=ws
-trojan://mypassword@2.2.2.2:443?security=tls&type=tcp
+vmess://eyJhZGQiOiIxMDQuMjEuMzUuMzUiLCJhaWQiOjAsImhvc3QiOiJubC5zZXJ2ZXIiLCJpZCI6IjE5YzYzYzE1LWQ0ZjgtNDQ4YS1hYzYzLTQyY2Y5YzYzYzYzNSIsIm5ldCI6IndzIiwicGF0aCI6Ii9ubCIsInBvcnQiOjQ0MywicHMiOiJOTCIsInRscyI6InRscyIsInR5cGUiOiJhdXRvIn0=
+vmess://eyJhZGQiOiIxNzIuNjcuMTM0LjE5IiwiYWlkIjowLCJob3N0IjoiZGUuc2VydmVyIiwiaWQiOiI0YzYzYzE1LWQ0ZjgtNDQ4YS1hYzYzLTQyY2Y5YzYzYzYzNSIsIm5ldCI6IndzIiwicGF0aCI6Ii9kZSIsInBvcnQiOjgwODAsInBzIjoiREUiLCJ0bHMiOiIiLCJ0eXBlIjoiYXV0byJ9
+vmess://eyJhZGQiOiIxMDQuMjEuMjIuMjIiLCJhaWQiOjAsImhvc3QiOiJpci5zZXJ2ZXIiLCJpZCI6IjhjNjNjMTUtZDRmOC00NDhhLWFjNjMtNDJjZjljNjNjNjM1IiwibmV0IjoidGNwIiwicGF0aCI6Ii9pciIsInBvcnQiOjQ0MywicHMiOiJpciIsInRscyI6InRscyIsInR5cGUiOiJhdXRvIn0=
+
+vless://12345678-abcd-efgh-1234-567890abcdef@104.21.35.35:443?encryption=none&security=reality&type=tcp&pbk=AbCdEfGhIjKlMnOpQrStUvWxYz1234567890&fp=chrome&sid=NL&spx=%2F
+vless://abcdef12-3456-7890-abcd-ef1234567890@172.67.134.19:8080?encryption=none&security=none&type=ws&host=de.server&path=%2Fde
+vless://98765432-abcd-efgh-1234-abcdef987654@104.21.22.22:443?encryption=none&security=tls&type=ws&host=ir.server&path=%2Fir
+
+trojan://mypassword@2.2.2.2:443?security=tls&type=tcp#US
+trojan://pass1234@3.3.3.3:8443?security=none&type=ws&host=nl.server&path=%2Fnl
+trojan://iranpass@5.5.5.5:443?security=tls&type=tcp#IR
