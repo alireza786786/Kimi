@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -17,7 +18,7 @@ jobs:
 
       - name: Run finalizer
         run: |
-          python Kimi/finalizer.py
+          python finalizer.py
 
       - name: Commit and push results
         run: |
