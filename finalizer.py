@@ -16,6 +16,7 @@ for filename in os.listdir(input_folder):
     path = os.path.join(input_folder, filename)
 
     # تشخیص کشور از نام فایل
+    # مثال: JP-1.txt → JP
     country = filename.split("-")[0].upper()
 
     if country not in countries:
